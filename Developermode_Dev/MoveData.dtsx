@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MoveData"
   DTS:PackageType="5"
-  DTS:VersionBuild="47"
-  DTS:VersionGUID="{BF4D3119-753D-4954-B3C4-6D72B559DE7A}">
+  DTS:VersionBuild="48"
+  DTS:VersionGUID="{D5D65512-C7C8-490B-86DF-AC61606F47A7}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -116,7 +116,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RenameFile">
       <DTS:VariableValue
-        DTS:DataType="8">D:\SSIS\Source\Test120240208184608.txt</DTS:VariableValue>
+        DTS:DataType="8">D:\SSIS\Source\Test120240208215920.txt</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -594,6 +594,112 @@ Imports System.Runtime.InteropServices
 <Assembly: AssemblyVersion("1.0.0.0")> 
 <Assembly: AssemblyFileVersion("1.0.0.0")> ]]></ProjectItem>
               <ProjectItem
+                Name="ScriptMain.vb"
+                Encoding="UTF8"><![CDATA[#Region "Help:  Introduction to the script task"
+'The Script Task allows you to perform virtually any operation that can be accomplished in
+'a .Net application within the context of an Integration Services control flow. 
+
+'Expand the other regions which have "Help" prefixes for examples of specific ways to use
+'Integration Services features within this script task.
+#End Region
+
+
+#Region "Imports"
+Imports System
+Imports System.Data
+Imports System.Math
+Imports Microsoft.SqlServer.Dts.Runtime
+#End Region
+
+'ScriptMain is the entry point class of the script.  Do not change the name, attributes,
+'or parent of this class.
+<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute()> _
+<System.CLSCompliantAttribute(False)> _
+Partial Public Class ScriptMain
+    Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
+
+#Region "Help:  Using Integration Services variables and parameters in a script"
+    'To use a variable in this script, first ensure that the variable has been added to 
+    'either the list contained in the ReadOnlyVariables property or the list contained in 
+    'the ReadWriteVariables property of this script task, according to whether or not your
+    'code needs to write to the variable.  To add the variable, save this script, close this instance of
+    'Visual Studio, and update the ReadOnlyVariables and 
+    'ReadWriteVariables properties in the Script Transformation Editor window.
+    'To use a parameter in this script, follow the same steps. Parameters are always read-only.
+
+    'Example of reading from a variable:
+    ' startTime = Dts.Variables("System::StartTime").Value
+
+    'Example of writing to a variable:
+    ' Dts.Variables("User::myStringVariable").Value = "new value"
+
+    'Example of reading from a package parameter:
+    ' batchId = Dts.Variables("$Package::batchId").Value
+
+    'Example of reading from a project parameter:
+    ' batchId = Dts.Variables("$Project::batchId").Value
+
+    'Example of reading from a sensitive project parameter:
+    ' batchId = Dts.Variables("$Project::batchId").GetSensitiveValue()
+#End Region
+
+#Region "Help:  Firing Integration Services events from a script"
+    'This script task can fire events for logging purposes.
+
+    'Example of firing an error event:
+    ' Dts.Events.FireError(18, "Process Values", "Bad value", "", 0)
+
+    'Example of firing an information event:
+    ' Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, fireAgain)
+
+    'Example of firing a warning event:
+    ' Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0)
+#End Region
+
+#Region "Help:  Using Integration Services connection managers in a script"
+    'Some types of connection managers can be used in this script task.  See the topic 
+    '"Working with Connection Managers Programatically" for details.
+
+    'Example of using an ADO.Net connection manager:
+    ' Dim rawConnection As Object = Dts.Connections("Sales DB").AcquireConnection(Dts.Transaction)
+    ' Dim myADONETConnection As SqlConnection = CType(rawConnection, SqlConnection)
+    ' <Use the connection in some code here, then release the connection>
+    ' Dts.Connections("Sales DB").ReleaseConnection(rawConnection)
+
+    'Example of using a File connection manager
+    ' Dim rawConnection As Object = Dts.Connections("Prices.zip").AcquireConnection(Dts.Transaction)
+    ' Dim filePath As String = CType(rawConnection, String)
+    ' <Use the connection in some code here, then release the connection>
+    ' Dts.Connections("Prices.zip").ReleaseConnection(rawConnection)
+#End Region
+
+    'This method is called when this script task executes in the control flow.
+    'Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
+    'To open Help, press F1.
+
+    Public Sub Main()
+        '
+        ' MsgBox(Dts.Variables("User::FilePath").Value.ToString)
+
+
+        '
+        Dts.TaskResult = ScriptResults.Success
+    End Sub
+
+#Region "ScriptResults declaration"
+    'This enum provides a convenient shorthand within the scope of this class for setting the
+    'result of the script.
+
+    'This code was generated automatically.
+    Enum ScriptResults
+        Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
+        Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
+    End Enum
+
+#End Region
+
+End Class]]></ProjectItem>
+              <ProjectItem
                 Name="ST_47648a3c27d64633a0f9ff72729f277f.vbproj"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
@@ -762,112 +868,6 @@ End Class]]></ProjectItem>
     <msb:File Include="My Project\Settings.Designer.vb" />
   </msb:ItemGroup>
 </c:Project>]]></ProjectItem>
-              <ProjectItem
-                Name="ScriptMain.vb"
-                Encoding="UTF8"><![CDATA[#Region "Help:  Introduction to the script task"
-'The Script Task allows you to perform virtually any operation that can be accomplished in
-'a .Net application within the context of an Integration Services control flow. 
-
-'Expand the other regions which have "Help" prefixes for examples of specific ways to use
-'Integration Services features within this script task.
-#End Region
-
-
-#Region "Imports"
-Imports System
-Imports System.Data
-Imports System.Math
-Imports Microsoft.SqlServer.Dts.Runtime
-#End Region
-
-'ScriptMain is the entry point class of the script.  Do not change the name, attributes,
-'or parent of this class.
-<Microsoft.SqlServer.Dts.Tasks.ScriptTask.SSISScriptTaskEntryPointAttribute()> _
-<System.CLSCompliantAttribute(False)> _
-Partial Public Class ScriptMain
-    Inherits Microsoft.SqlServer.Dts.Tasks.ScriptTask.VSTARTScriptObjectModelBase
-
-#Region "Help:  Using Integration Services variables and parameters in a script"
-    'To use a variable in this script, first ensure that the variable has been added to 
-    'either the list contained in the ReadOnlyVariables property or the list contained in 
-    'the ReadWriteVariables property of this script task, according to whether or not your
-    'code needs to write to the variable.  To add the variable, save this script, close this instance of
-    'Visual Studio, and update the ReadOnlyVariables and 
-    'ReadWriteVariables properties in the Script Transformation Editor window.
-    'To use a parameter in this script, follow the same steps. Parameters are always read-only.
-
-    'Example of reading from a variable:
-    ' startTime = Dts.Variables("System::StartTime").Value
-
-    'Example of writing to a variable:
-    ' Dts.Variables("User::myStringVariable").Value = "new value"
-
-    'Example of reading from a package parameter:
-    ' batchId = Dts.Variables("$Package::batchId").Value
-
-    'Example of reading from a project parameter:
-    ' batchId = Dts.Variables("$Project::batchId").Value
-
-    'Example of reading from a sensitive project parameter:
-    ' batchId = Dts.Variables("$Project::batchId").GetSensitiveValue()
-#End Region
-
-#Region "Help:  Firing Integration Services events from a script"
-    'This script task can fire events for logging purposes.
-
-    'Example of firing an error event:
-    ' Dts.Events.FireError(18, "Process Values", "Bad value", "", 0)
-
-    'Example of firing an information event:
-    ' Dts.Events.FireInformation(3, "Process Values", "Processing has started", "", 0, fireAgain)
-
-    'Example of firing a warning event:
-    ' Dts.Events.FireWarning(14, "Process Values", "No values received for input", "", 0)
-#End Region
-
-#Region "Help:  Using Integration Services connection managers in a script"
-    'Some types of connection managers can be used in this script task.  See the topic 
-    '"Working with Connection Managers Programatically" for details.
-
-    'Example of using an ADO.Net connection manager:
-    ' Dim rawConnection As Object = Dts.Connections("Sales DB").AcquireConnection(Dts.Transaction)
-    ' Dim myADONETConnection As SqlConnection = CType(rawConnection, SqlConnection)
-    ' <Use the connection in some code here, then release the connection>
-    ' Dts.Connections("Sales DB").ReleaseConnection(rawConnection)
-
-    'Example of using a File connection manager
-    ' Dim rawConnection As Object = Dts.Connections("Prices.zip").AcquireConnection(Dts.Transaction)
-    ' Dim filePath As String = CType(rawConnection, String)
-    ' <Use the connection in some code here, then release the connection>
-    ' Dts.Connections("Prices.zip").ReleaseConnection(rawConnection)
-#End Region
-
-    'This method is called when this script task executes in the control flow.
-    'Before returning from this method, set the value of Dts.TaskResult to indicate success or failure.
-    'To open Help, press F1.
-
-    Public Sub Main()
-        '
-        ' MsgBox(Dts.Variables("User::FilePath").Value.ToString)
-
-
-        '
-        Dts.TaskResult = ScriptResults.Success
-    End Sub
-
-#Region "ScriptResults declaration"
-    'This enum provides a convenient shorthand within the scope of this class for setting the
-    'result of the script.
-
-    'This code was generated automatically.
-    Enum ScriptResults
-        Success = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Success
-        Failure = Microsoft.SqlServer.Dts.Runtime.DTSExecResult.Failure
-    End Enum
-
-#End Region
-
-End Class]]></ProjectItem>
               <ProjectItem
                 Name="My Project\Resources.resx"
                 Encoding="UTF8"><![CDATA[<?xml version="1.0" encoding="utf-8"?>
@@ -1273,7 +1273,7 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="170,42"
           Id="Package\Foreach Loop Container\DFT_DataMigration"
-          TopLeft="39,101" />
+          TopLeft="45,102" />
         <NodeLayout
           Size="149,42"
           Id="Package\Foreach Loop Container\FST_MoveData"
@@ -1322,30 +1322,30 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint 1]"
-          TopLeft="124,143">
+          TopLeft="130,144">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="109.5,48.5"
+              EndConnector="103.5,47.5"
               Start="0,0"
-              End="109.5,41">
+              End="103.5,40">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20.25" />
+                    End="0,19.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20.25"
-                    Point2="0,24.25"
-                    Point3="4,24.25" />
+                    Point1="0,19.75"
+                    Point2="0,23.75"
+                    Point3="4,23.75" />
                   <mssgle:LineSegment
-                    End="105.5,24.25" />
+                    End="99.5,23.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="105.5,24.25"
-                    Point2="109.5,24.25"
-                    Point3="109.5,28.25" />
+                    Point1="99.5,23.75"
+                    Point2="103.5,23.75"
+                    Point3="103.5,27.75" />
                   <mssgle:LineSegment
-                    End="109.5,41" />
+                    End="103.5,40" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1360,26 +1360,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-114.5,39"
+              EndConnector="-108.5,40"
               Start="0,0"
-              End="-114.5,31.5">
+              End="-108.5,32.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.5" />
+                    End="0,16" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.5"
-                    Point2="0,19.5"
-                    Point3="-4,19.5" />
+                    Point1="0,16"
+                    Point2="0,20"
+                    Point3="-4,20" />
                   <mssgle:LineSegment
-                    End="-110.5,19.5" />
+                    End="-104.5,20" />
                   <mssgle:CubicBezierSegment
-                    Point1="-110.5,19.5"
-                    Point2="-114.5,19.5"
-                    Point3="-114.5,23.5" />
+                    Point1="-104.5,20"
+                    Point2="-108.5,20"
+                    Point3="-108.5,24" />
                   <mssgle:LineSegment
-                    End="-114.5,31.5" />
+                    End="-108.5,32.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>

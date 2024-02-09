@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MergeJoin"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{C40A108B-857D-4A52-B20C-8A5517CF8438}">
+  DTS:VersionBuild="24"
+  DTS:VersionGUID="{4CCB64DB-4139-466A-9B1B-C5690920937F}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -46,13 +46,13 @@
   </DTS:Variables>
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\DFT_LookupCountry"
+      DTS:refId="Package\DFT_MergeJoin_Countrycode"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
       DTS:DTSID="{84030BE4-83FD-46A0-85CE-505CBB2A6623}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="DFT_LookupCountry"
+      DTS:ObjectName="DFT_MergeJoin_Countrycode"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -60,7 +60,7 @@
           version="1">
           <components>
             <component
-              refId="Package\DFT_LookupCountry\Merge Join"
+              refId="Package\DFT_MergeJoin_Countrycode\Merge Join"
               componentClassID="Microsoft.MergeJoin"
               contactInfo="Merge Join;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
               description="Combine two sorted data flows into one using the FULL, LEFT, or INNER join. We recommend this transformation when data flows can be sorted at their sources."
@@ -87,65 +87,65 @@
               </properties>
               <inputs>
                 <input
-                  refId="Package\DFT_LookupCountry\Merge Join.Inputs[Merge Join Left Input]"
+                  refId="Package\DFT_MergeJoin_Countrycode\Merge Join.Inputs[Merge Join Left Input]"
                   hasSideEffects="true"
                   name="Merge Join Left Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT_LookupCountry\Merge Join.Inputs[Merge Join Left Input].Columns[ID]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Merge Join.Inputs[Merge Join Left Input].Columns[ID]"
                       cachedDataType="i4"
                       cachedName="ID"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output].Columns[ID]" />
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output].Columns[ID]" />
                     <inputColumn
-                      refId="Package\DFT_LookupCountry\Merge Join.Inputs[Merge Join Left Input].Columns[City]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Merge Join.Inputs[Merge Join Left Input].Columns[City]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="City"
-                      lineageId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output].Columns[City]" />
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output].Columns[City]" />
                     <inputColumn
-                      refId="Package\DFT_LookupCountry\Merge Join.Inputs[Merge Join Left Input].Columns[Continent]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Merge Join.Inputs[Merge Join Left Input].Columns[Continent]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="Continent"
-                      lineageId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output].Columns[Continent]" />
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output].Columns[Continent]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
                 <input
-                  refId="Package\DFT_LookupCountry\Merge Join.Inputs[Merge Join Right Input]"
+                  refId="Package\DFT_MergeJoin_Countrycode\Merge Join.Inputs[Merge Join Right Input]"
                   hasSideEffects="true"
                   name="Merge Join Right Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\DFT_LookupCountry\Merge Join.Inputs[Merge Join Right Input].Columns[ID]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Merge Join.Inputs[Merge Join Right Input].Columns[ID]"
                       cachedDataType="i4"
                       cachedName="ID"
                       cachedSortKeyPosition="1"
-                      lineageId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output].Columns[ID]" />
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output].Columns[ID]" />
                     <inputColumn
-                      refId="Package\DFT_LookupCountry\Merge Join.Inputs[Merge Join Right Input].Columns[CountryName]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Merge Join.Inputs[Merge Join Right Input].Columns[CountryName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="255"
                       cachedName="CountryName"
-                      lineageId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output].Columns[CountryName]" />
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output].Columns[CountryName]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT_LookupCountry\Merge Join.Outputs[Merge Join Output]"
+                  refId="Package\DFT_MergeJoin_Countrycode\Merge Join.Outputs[Merge Join Output]"
                   isSorted="true"
                   name="Merge Join Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Merge Join.Outputs[Merge Join Output].Columns[ID]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Merge Join.Outputs[Merge Join Output].Columns[ID]"
                       dataType="i4"
-                      lineageId="Package\DFT_LookupCountry\Merge Join.Outputs[Merge Join Output].Columns[ID]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Merge Join.Outputs[Merge Join Output].Columns[ID]"
                       name="ID"
                       sortKeyPosition="1">
                       <properties>
@@ -153,52 +153,52 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\DFT_LookupCountry\Merge Join.Inputs[Merge Join Left Input].Columns[ID]}</property>
+                          name="InputColumnID">#{Package\DFT_MergeJoin_Countrycode\Merge Join.Inputs[Merge Join Left Input].Columns[ID]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Merge Join.Outputs[Merge Join Output].Columns[CountryName]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Merge Join.Outputs[Merge Join Output].Columns[CountryName]"
                       codePage="1252"
                       dataType="str"
                       length="255"
-                      lineageId="Package\DFT_LookupCountry\Merge Join.Outputs[Merge Join Output].Columns[CountryName]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Merge Join.Outputs[Merge Join Output].Columns[CountryName]"
                       name="CountryName">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\DFT_LookupCountry\Merge Join.Inputs[Merge Join Right Input].Columns[CountryName]}</property>
+                          name="InputColumnID">#{Package\DFT_MergeJoin_Countrycode\Merge Join.Inputs[Merge Join Right Input].Columns[CountryName]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Merge Join.Outputs[Merge Join Output].Columns[City]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Merge Join.Outputs[Merge Join Output].Columns[City]"
                       codePage="1252"
                       dataType="str"
                       length="255"
-                      lineageId="Package\DFT_LookupCountry\Merge Join.Outputs[Merge Join Output].Columns[City]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Merge Join.Outputs[Merge Join Output].Columns[City]"
                       name="City">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\DFT_LookupCountry\Merge Join.Inputs[Merge Join Left Input].Columns[City]}</property>
+                          name="InputColumnID">#{Package\DFT_MergeJoin_Countrycode\Merge Join.Inputs[Merge Join Left Input].Columns[City]}</property>
                       </properties>
                     </outputColumn>
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Merge Join.Outputs[Merge Join Output].Columns[Continent]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Merge Join.Outputs[Merge Join Output].Columns[Continent]"
                       codePage="1252"
                       dataType="str"
                       length="255"
-                      lineageId="Package\DFT_LookupCountry\Merge Join.Outputs[Merge Join Output].Columns[Continent]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Merge Join.Outputs[Merge Join Output].Columns[Continent]"
                       name="Continent">
                       <properties>
                         <property
                           containsID="true"
                           dataType="System.Int32"
                           description="The input column associated with this output column"
-                          name="InputColumnID">#{Package\DFT_LookupCountry\Merge Join.Inputs[Merge Join Left Input].Columns[Continent]}</property>
+                          name="InputColumnID">#{Package\DFT_MergeJoin_Countrycode\Merge Join.Inputs[Merge Join Left Input].Columns[Continent]}</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -207,31 +207,31 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT_LookupCountry\Multicast"
+              refId="Package\DFT_MergeJoin_Countrycode\Multicast"
               componentClassID="Microsoft.Multicast"
               contactInfo="Multicast;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
               description="Distributes every input row to every row in one or more outputs. For example, branch your data flow to make a copy of data so that some values can be masked before sharing with external partners."
               name="Multicast">
               <inputs>
                 <input
-                  refId="Package\DFT_LookupCountry\Multicast.Inputs[Multicast Input 1]"
+                  refId="Package\DFT_MergeJoin_Countrycode\Multicast.Inputs[Multicast Input 1]"
                   name="Multicast Input 1">
                   <externalMetadataColumns />
                 </input>
               </inputs>
               <outputs>
                 <output
-                  refId="Package\DFT_LookupCountry\Multicast.Outputs[Multicast Output 1]"
+                  refId="Package\DFT_MergeJoin_Countrycode\Multicast.Outputs[Multicast Output 1]"
                   dangling="true"
                   deleteOutputOnPathDetached="true"
                   name="Multicast Output 1"
-                  synchronousInputId="Package\DFT_LookupCountry\Multicast.Inputs[Multicast Input 1]">
+                  synchronousInputId="Package\DFT_MergeJoin_Countrycode\Multicast.Inputs[Multicast Input 1]">
                   <externalMetadataColumns />
                 </output>
               </outputs>
             </component>
             <component
-              refId="Package\DFT_LookupCountry\Source_Continent"
+              refId="Package\DFT_MergeJoin_Countrycode\Source_Continent"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -282,7 +282,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT_LookupCountry\Source_Continent.Connections[OleDbConnection]"
+                  refId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[WORKPC\MSSQLSERVER_2019.Test_DB]"
                   connectionManagerRefId="Package.ConnectionManagers[WORKPC\MSSQLSERVER_2019.Test_DB]"
                   description="The OLE DB runtime connection used to access the database."
@@ -290,57 +290,57 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output]"
+                  refId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output]"
                   isSorted="true"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output].Columns[ID]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output].Columns[ID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output].ExternalColumns[ID]"
-                      lineageId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output].Columns[ID]"
+                      externalMetadataColumnId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output].Columns[ID]"
                       name="ID"
                       sortKeyPosition="1"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output].Columns[City]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output].Columns[City]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      externalMetadataColumnId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output].ExternalColumns[City]"
                       length="255"
-                      lineageId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output].Columns[City]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output].Columns[City]"
                       name="City"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output].Columns[Continent]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output].Columns[Continent]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output].ExternalColumns[Continent]"
+                      externalMetadataColumnId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output].ExternalColumns[Continent]"
                       length="255"
-                      lineageId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output].Columns[Continent]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output].Columns[Continent]"
                       name="Continent"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output].ExternalColumns[ID]"
                       dataType="i4"
                       name="ID" />
                     <externalMetadataColumn
-                      refId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output].ExternalColumns[City]"
                       codePage="1252"
                       dataType="str"
                       length="255"
                       name="City" />
                     <externalMetadataColumn
-                      refId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output].ExternalColumns[Continent]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output].ExternalColumns[Continent]"
                       codePage="1252"
                       dataType="str"
                       length="255"
@@ -348,39 +348,39 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Error Output]"
+                  refId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Error Output].Columns[ID]"
                       dataType="i4"
-                      lineageId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Error Output].Columns[ID]"
                       name="ID" />
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Error Output].Columns[City]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Error Output].Columns[City]"
                       codePage="1252"
                       dataType="str"
                       length="255"
-                      lineageId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Error Output].Columns[City]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Error Output].Columns[City]"
                       name="City" />
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Error Output].Columns[Continent]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Error Output].Columns[Continent]"
                       codePage="1252"
                       dataType="str"
                       length="255"
-                      lineageId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Error Output].Columns[Continent]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Error Output].Columns[Continent]"
                       name="Continent" />
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -389,7 +389,7 @@
               </outputs>
             </component>
             <component
-              refId="Package\DFT_LookupCountry\Source_SampleData"
+              refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
@@ -438,7 +438,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\DFT_LookupCountry\Source_SampleData.Connections[OleDbConnection]"
+                  refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[WORKPC\MSSQLSERVER_2019.Test_DB]"
                   connectionManagerRefId="Package.ConnectionManagers[WORKPC\MSSQLSERVER_2019.Test_DB]"
                   description="The OLE DB runtime connection used to access the database."
@@ -446,57 +446,57 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output]"
+                  refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output]"
                   isSorted="true"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output].Columns[ID]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output].Columns[ID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output].ExternalColumns[ID]"
-                      lineageId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output].Columns[ID]"
+                      externalMetadataColumnId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output].Columns[ID]"
                       name="ID"
                       sortKeyPosition="1"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output].Columns[City]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output].Columns[City]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      externalMetadataColumnId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output].ExternalColumns[City]"
                       length="255"
-                      lineageId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output].Columns[City]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output].Columns[City]"
                       name="City"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output].Columns[CountryName]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output].Columns[CountryName]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output].ExternalColumns[CountryName]"
+                      externalMetadataColumnId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output].ExternalColumns[CountryName]"
                       length="255"
-                      lineageId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output].Columns[CountryName]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output].Columns[CountryName]"
                       name="CountryName"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output].ExternalColumns[ID]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output].ExternalColumns[ID]"
                       dataType="i4"
                       name="ID" />
                     <externalMetadataColumn
-                      refId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output].ExternalColumns[City]"
                       codePage="1252"
                       dataType="str"
                       length="255"
                       name="City" />
                     <externalMetadataColumn
-                      refId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output].ExternalColumns[CountryName]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output].ExternalColumns[CountryName]"
                       codePage="1252"
                       dataType="str"
                       length="255"
@@ -504,39 +504,39 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Error Output]"
+                  refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[ID]"
                       dataType="i4"
-                      lineageId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[ID]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[ID]"
                       name="ID" />
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[CountryName]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[CountryName]"
                       codePage="1252"
                       dataType="str"
                       length="255"
-                      lineageId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[CountryName]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[CountryName]"
                       name="CountryName" />
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[City]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[City]"
                       codePage="1252"
                       dataType="str"
                       length="255"
-                      lineageId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[City]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[City]"
                       name="City" />
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -547,20 +547,20 @@
           </components>
           <paths>
             <path
-              refId="Package\DFT_LookupCountry.Paths[Merge Join Output]"
-              endId="Package\DFT_LookupCountry\Multicast.Inputs[Multicast Input 1]"
+              refId="Package\DFT_MergeJoin_Countrycode.Paths[Merge Join Output]"
+              endId="Package\DFT_MergeJoin_Countrycode\Multicast.Inputs[Multicast Input 1]"
               name="Merge Join Output"
-              startId="Package\DFT_LookupCountry\Merge Join.Outputs[Merge Join Output]" />
+              startId="Package\DFT_MergeJoin_Countrycode\Merge Join.Outputs[Merge Join Output]" />
             <path
-              refId="Package\DFT_LookupCountry.Paths[OLE DB Source Output1]"
-              endId="Package\DFT_LookupCountry\Merge Join.Inputs[Merge Join Right Input]"
+              refId="Package\DFT_MergeJoin_Countrycode.Paths[OLE DB Source Output1]"
+              endId="Package\DFT_MergeJoin_Countrycode\Merge Join.Inputs[Merge Join Left Input]"
               name="OLE DB Source Output"
-              startId="Package\DFT_LookupCountry\Source_SampleData.Outputs[OLE DB Source Output]" />
+              startId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Outputs[OLE DB Source Output]" />
             <path
-              refId="Package\DFT_LookupCountry.Paths[OLE DB Source Output]"
-              endId="Package\DFT_LookupCountry\Merge Join.Inputs[Merge Join Left Input]"
+              refId="Package\DFT_MergeJoin_Countrycode.Paths[OLE DB Source Output]"
+              endId="Package\DFT_MergeJoin_Countrycode\Merge Join.Inputs[Merge Join Right Input]"
               name="OLE DB Source Output"
-              startId="Package\DFT_LookupCountry\Source_Continent.Outputs[OLE DB Source Output]" />
+              startId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -579,55 +579,59 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="175,42"
-          Id="Package\DFT_LookupCountry"
-          TopLeft="354.5,219.5" />
+          Size="217,42"
+          Id="Package\DFT_MergeJoin_Countrycode"
+          TopLeft="347.5,124.5" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\DFT_LookupCountry">
+    design-time-name="Package\DFT_MergeJoin_Countrycode">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
           Size="162,42"
-          Id="Package\DFT_LookupCountry\Source_Continent"
+          Id="Package\DFT_MergeJoin_Countrycode\Source_Continent"
           TopLeft="116.5,87.5" />
         <NodeLayout
+          Size="120,42"
+          Id="Package\DFT_MergeJoin_Countrycode\Multicast"
+          TopLeft="472,441" />
+        <NodeLayout
           Size="173,42"
-          Id="Package\DFT_LookupCountry\Source_SampleData"
+          Id="Package\DFT_MergeJoin_Countrycode\Source_SampleData"
           TopLeft="352,85" />
         <NodeLayout
           Size="130,42"
-          Id="Package\DFT_LookupCountry\Merge Join"
-          TopLeft="268,257" />
+          Id="Package\DFT_MergeJoin_Countrycode\Merge Join"
+          TopLeft="258,290" />
         <EdgeLayout
-          Id="Package\DFT_LookupCountry.Paths[OLE DB Source Output]"
+          Id="Package\DFT_MergeJoin_Countrycode.Paths[OLE DB Source Output1]"
           TopLeft="197.5,129.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="115.166666666667,127.5"
+              EndConnector="105.166666666667,160.5"
               Start="0,0"
-              End="115.166666666667,120">
+              End="105.166666666667,153">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,71.5699088145897" />
+                    End="0,91.129179331307" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,71.5699088145897"
-                    Point2="0,75.5699088145897"
-                    Point3="4,75.5699088145897" />
+                    Point1="0,91.129179331307"
+                    Point2="0,95.129179331307"
+                    Point3="4,95.129179331307" />
                   <mssgle:LineSegment
-                    End="111.166666666667,75.5699088145897" />
+                    End="101.166666666667,95.129179331307" />
                   <mssgle:CubicBezierSegment
-                    Point1="111.166666666667,75.5699088145897"
-                    Point2="115.166666666667,75.5699088145897"
-                    Point3="115.166666666667,79.5699088145897" />
+                    Point1="101.166666666667,95.129179331307"
+                    Point2="105.166666666667,95.129179331307"
+                    Point3="105.166666666667,99.129179331307" />
                   <mssgle:LineSegment
-                    End="115.166666666667,120" />
+                    End="105.166666666667,153" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -637,31 +641,31 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\DFT_LookupCountry.Paths[OLE DB Source Output1]"
+          Id="Package\DFT_MergeJoin_Countrycode.Paths[OLE DB Source Output]"
           TopLeft="438.5,127">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-85.1666666666667,130"
+              EndConnector="-95.1666666666667,163"
               Start="0,0"
-              End="-85.1666666666667,122.5">
+              End="-95.1666666666667,155.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,73.0516717325228" />
+                    End="0,92.6109422492401" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,73.0516717325228"
-                    Point2="0,77.0516717325228"
-                    Point3="-4,77.0516717325228" />
+                    Point1="0,92.6109422492401"
+                    Point2="0,96.6109422492401"
+                    Point3="-4,96.6109422492401" />
                   <mssgle:LineSegment
-                    End="-81.1666666666667,77.0516717325228" />
+                    End="-91.1666666666667,96.6109422492401" />
                   <mssgle:CubicBezierSegment
-                    Point1="-81.1666666666667,77.0516717325228"
-                    Point2="-85.1666666666667,77.0516717325228"
-                    Point3="-85.1666666666667,81.0516717325228" />
+                    Point1="-91.1666666666667,96.6109422492401"
+                    Point2="-95.1666666666667,96.6109422492401"
+                    Point3="-95.1666666666667,100.61094224924" />
                   <mssgle:LineSegment
-                    End="-85.1666666666667,122.5" />
+                    End="-95.1666666666667,155.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -670,51 +674,45 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120,42"
-          Id="Package\DFT_LookupCountry\Multicast"
-          TopLeft="409,449" />
         <EdgeLayout
-          Id="Package\DFT_LookupCountry.Paths[Merge Join Output]"
-          TopLeft="333,299">
+          Id="Package\DFT_MergeJoin_Countrycode.Paths[Merge Join Output]"
+          TopLeft="323,332">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="136,150"
+              EndConnector="209,109"
               Start="0,0"
-              End="136,142.5">
+              End="209,101.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,71" />
+                    End="0,50.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,71"
-                    Point2="0,75"
-                    Point3="4,75" />
+                    Point1="0,50.5"
+                    Point2="0,54.5"
+                    Point3="4,54.5" />
                   <mssgle:LineSegment
-                    End="132,75" />
+                    End="205,54.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="132,75"
-                    Point2="136,75"
-                    Point3="136,79" />
+                    Point1="205,54.5"
+                    Point2="209,54.5"
+                    Point3="209,58.5" />
                   <mssgle:LineSegment
-                    End="136,142.5" />
+                    End="209,101.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="60,80,16,16"
-              RelativePosition="Any" />
+            <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT_LookupCountry\Source_Continent">
+    design-time-name="Package\DFT_MergeJoin_Countrycode\Source_Continent">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -727,7 +725,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\DFT_LookupCountry\Source_SampleData">
+    design-time-name="Package\DFT_MergeJoin_Countrycode\Source_SampleData">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Lookup"
   DTS:PackageType="5"
-  DTS:VersionBuild="11"
-  DTS:VersionGUID="{6B95D54C-3FDF-402E-A842-56E047D0340F}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{45BEDB8F-AA2C-4852-A482-0834650D62A6}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -417,7 +417,7 @@ where [refTable].[City] = ?</property>
         <NodeLayout
           Size="175,42"
           Id="Package\DFT_LookupCountry"
-          TopLeft="291.5,125.5" />
+          TopLeft="344.5,190.5" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -427,39 +427,43 @@ where [refTable].[City] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="120,42"
+          Id="Package\DFT_LookupCountry\Multicast"
+          TopLeft="577,360" />
+        <NodeLayout
           Size="162,42"
           Id="Package\DFT_LookupCountry\Source_Continent"
           TopLeft="110.5,81.5" />
         <NodeLayout
           Size="113,42"
           Id="Package\DFT_LookupCountry\Lookup"
-          TopLeft="472,198" />
+          TopLeft="295,245" />
         <EdgeLayout
           Id="Package\DFT_LookupCountry.Paths[OLE DB Source Output]"
           TopLeft="191.5,123.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="337,74.5"
+              EndConnector="160,121.5"
               Start="0,0"
-              End="337,67">
+              End="160,114">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.25" />
+                    End="0,56.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33.25"
-                    Point2="0,37.25"
-                    Point3="4,37.25" />
+                    Point1="0,56.75"
+                    Point2="0,60.75"
+                    Point3="4,60.75" />
                   <mssgle:LineSegment
-                    End="333,37.25" />
+                    End="156,60.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="333,37.25"
-                    Point2="337,37.25"
-                    Point3="337,41.25" />
+                    Point1="156,60.75"
+                    Point2="160,60.75"
+                    Point3="160,64.75" />
                   <mssgle:LineSegment
-                    End="337,67" />
+                    End="160,114" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -468,43 +472,39 @@ where [refTable].[City] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="120,42"
-          Id="Package\DFT_LookupCountry\Multicast"
-          TopLeft="577,360" />
         <EdgeLayout
           Id="Package\DFT_LookupCountry.Paths[Lookup Match Output]"
-          TopLeft="528.5,240">
+          TopLeft="351.5,287">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="108.5,120"
+              EndConnector="285.5,73"
               Start="0,0"
-              End="108.5,112.5">
+              End="285.5,65.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,56" />
+                    End="0,32.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,56"
-                    Point2="0,60"
-                    Point3="4,60" />
+                    Point1="0,32.5"
+                    Point2="0,36.5"
+                    Point3="4,36.5" />
                   <mssgle:LineSegment
-                    End="104.5,60" />
+                    End="281.5,36.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="104.5,60"
-                    Point2="108.5,60"
-                    Point3="108.5,64" />
+                    Point1="281.5,36.5"
+                    Point2="285.5,36.5"
+                    Point3="285.5,40.5" />
                   <mssgle:LineSegment
-                    End="108.5,112.5" />
+                    End="285.5,65.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="6.05861328125,65,96.3827734375,11.609375"
+              BoundingBox="94.55861328125,41.5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -530,7 +530,7 @@ where [refTable].[City] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -540,7 +540,7 @@ where [refTable].[City] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
