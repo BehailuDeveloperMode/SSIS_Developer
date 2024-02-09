@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MoveData"
   DTS:PackageType="5"
-  DTS:VersionBuild="48"
-  DTS:VersionGUID="{D5D65512-C7C8-490B-86DF-AC61606F47A7}">
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{B1745629-A94E-4356-8FF1-8ED21979AF4C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -116,7 +116,7 @@
       DTS:Namespace="User"
       DTS:ObjectName="RenameFile">
       <DTS:VariableValue
-        DTS:DataType="8">D:\SSIS\Source\Test120240208215920.txt</DTS:VariableValue>
+        DTS:DataType="8">D:\SSIS\Source\Test120240208220019.txt</DTS:VariableValue>
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
@@ -1277,41 +1277,41 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
         <NodeLayout
           Size="149,42"
           Id="Package\Foreach Loop Container\FST_MoveData"
-          TopLeft="231,285" />
+          TopLeft="220,286" />
         <NodeLayout
           Size="157,42"
           Id="Package\Foreach Loop Container\FST_RenameFile"
-          TopLeft="155,191.5" />
+          TopLeft="142,181.5" />
         <NodeLayout
           Size="131,42"
           Id="Package\Foreach Loop Container\Script Task"
           TopLeft="173,20" />
         <EdgeLayout
           Id="Package\Foreach Loop Container.PrecedenceConstraints[Constraint]"
-          TopLeft="233.5,233.5">
+          TopLeft="220.5,223.5">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="72,51.5"
+              EndConnector="74,62.5"
               Start="0,0"
-              End="72,44">
+              End="74,55">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,21.75" />
+                    End="0,27.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,21.75"
-                    Point2="0,25.75"
-                    Point3="4,25.75" />
+                    Point1="0,27.25"
+                    Point2="0,31.25"
+                    Point3="4,31.25" />
                   <mssgle:LineSegment
-                    End="68,25.75" />
+                    End="70,31.25" />
                   <mssgle:CubicBezierSegment
-                    Point1="68,25.75"
-                    Point2="72,25.75"
-                    Point3="72,29.75" />
+                    Point1="70,31.25"
+                    Point2="74,31.25"
+                    Point3="74,35.25" />
                   <mssgle:LineSegment
-                    End="72,44" />
+                    End="74,55" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1326,26 +1326,26 @@ AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</BinaryItem>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="103.5,47.5"
+              EndConnector="90.5,37.5"
               Start="0,0"
-              End="103.5,40">
+              End="90.5,30">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,19.75" />
+                    End="0,14.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,19.75"
-                    Point2="0,23.75"
-                    Point3="4,23.75" />
+                    Point1="0,14.75"
+                    Point2="0,18.75"
+                    Point3="4,18.75" />
                   <mssgle:LineSegment
-                    End="99.5,23.75" />
+                    End="86.5,18.75" />
                   <mssgle:CubicBezierSegment
-                    Point1="99.5,23.75"
-                    Point2="103.5,23.75"
-                    Point3="103.5,27.75" />
+                    Point1="86.5,18.75"
+                    Point2="90.5,18.75"
+                    Point3="90.5,22.75" />
                   <mssgle:LineSegment
-                    End="103.5,40" />
+                    End="90.5,30" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
