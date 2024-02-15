@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ConditionalSplit"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{47E14AC5-CBAE-4C4B-B3B9-3253EE30BC0C}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{B752F8C1-3F09-4616-AB49-5F7E1257B7A4}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -619,47 +619,39 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="180,42"
-          Id="Package\DFT_ConditionalSplit\FFD_CountryGroup_1"
-          TopLeft="93,370" />
-        <NodeLayout
-          Size="180,42"
-          Id="Package\DFT_ConditionalSplit\FFD_CountryGroup_2"
-          TopLeft="614,377" />
-        <NodeLayout
           Size="155,42"
           Id="Package\DFT_ConditionalSplit\Conditional Split"
-          TopLeft="404,173" />
+          TopLeft="269,176" />
         <NodeLayout
           Size="173,42"
           Id="Package\DFT_ConditionalSplit\Source_SampleData"
-          TopLeft="196,63" />
+          TopLeft="160,79" />
         <EdgeLayout
           Id="Package\DFT_ConditionalSplit.Paths[OLE DB Source Output]"
-          TopLeft="282.5,105">
+          TopLeft="246.5,121">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="199,68"
+              EndConnector="100,55"
               Start="0,0"
-              End="199,60.5">
+              End="100,47.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,30" />
+                    End="0,23.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,30"
-                    Point2="0,34"
-                    Point3="4,34" />
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="4,27.5" />
                   <mssgle:LineSegment
-                    End="195,34" />
+                    End="96,27.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="195,34"
-                    Point2="199,34"
-                    Point3="199,38" />
+                    Point1="96,27.5"
+                    Point2="100,27.5"
+                    Point3="100,31.5" />
                   <mssgle:LineSegment
-                    End="199,60.5" />
+                    End="100,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -668,75 +660,83 @@
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="180,42"
+          Id="Package\DFT_ConditionalSplit\FFD_CountryGroup_2"
+          TopLeft="462,309" />
         <EdgeLayout
-          Id="Package\DFT_ConditionalSplit.Paths[CountyGroup_1]"
-          TopLeft="457,215">
+          Id="Package\DFT_ConditionalSplit.Paths[CountryGroup_2]"
+          TopLeft="371,218">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-274,155"
+              EndConnector="181,91"
               Start="0,0"
-              End="-274,147.5">
+              End="181,83.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,58.9501915708812" />
+                    End="0,32.9578544061303" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,58.9501915708812"
-                    Point2="0,62.9501915708812"
-                    Point3="-4,62.9501915708812" />
+                    Point1="0,32.9578544061303"
+                    Point2="0,36.9578544061303"
+                    Point3="4,36.9578544061303" />
                   <mssgle:LineSegment
-                    End="-270,62.9501915708812" />
+                    End="177,36.9578544061303" />
                   <mssgle:CubicBezierSegment
-                    Point1="-270,62.9501915708812"
-                    Point2="-274,62.9501915708812"
-                    Point3="-274,66.9501915708812" />
+                    Point1="177,36.9578544061303"
+                    Point2="181,36.9578544061303"
+                    Point3="181,40.9578544061303" />
                   <mssgle:LineSegment
-                    End="-274,147.5" />
+                    End="181,83.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-171.7580859375,67.9501915708812,69.516171875,11.4140625"
+              BoundingBox="53.7563671875,41.9578544061303,73.487265625,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="180,42"
+          Id="Package\DFT_ConditionalSplit\FFD_CountryGroup_1"
+          TopLeft="96,317" />
         <EdgeLayout
-          Id="Package\DFT_ConditionalSplit.Paths[CountryGroup_2]"
-          TopLeft="506,215">
+          Id="Package\DFT_ConditionalSplit.Paths[CountyGroup_1]"
+          TopLeft="322,218">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="198,162"
+              EndConnector="-136,99"
               Start="0,0"
-              End="198,154.5">
+              End="-136,91.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,61.7931034482759" />
+                    End="0,36.2068965517241" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,61.7931034482759"
-                    Point2="0,65.7931034482759"
-                    Point3="4,65.7931034482759" />
+                    Point1="0,36.2068965517241"
+                    Point2="0,40.2068965517241"
+                    Point3="-4,40.2068965517241" />
                   <mssgle:LineSegment
-                    End="194,65.7931034482759" />
+                    End="-132,40.2068965517241" />
                   <mssgle:CubicBezierSegment
-                    Point1="194,65.7931034482759"
-                    Point2="198,65.7931034482759"
-                    Point3="198,69.7931034482759" />
+                    Point1="-132,40.2068965517241"
+                    Point2="-136,40.2068965517241"
+                    Point3="-136,44.2068965517241" />
                   <mssgle:LineSegment
-                    End="198,154.5" />
+                    End="-136,91.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="62.2563671875,70.7931034482759,73.487265625,11.43359375"
+              BoundingBox="-102.7580859375,45.2068965517241,69.516171875,11.4140625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
