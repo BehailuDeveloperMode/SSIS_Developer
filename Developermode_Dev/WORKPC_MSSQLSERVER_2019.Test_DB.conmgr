@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="WORKPC_MSSQLSERVER_2019.Test_DB"
+  DTS:DTSID="{45B2E9B3-D620-4A6E-8ADD-5F22F9883E07}"
+  DTS:CreationName="OLEDB">
+  <DTS:PropertyExpression
+    DTS:Name="ConnectionString">@[$Project::WORKPCMSSQLSERVER_2019Test_DB_ConnectionString]</DTS:PropertyExpression>
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=WORKPC\MSSQLSERVER_2019;Initial Catalog=Test_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-YoungAdult_ETL-{7895A46C-7CC7-433F-9C05-8C99280DE789}WORKPC\MSSQLSERVER_2019.Test_DB;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
