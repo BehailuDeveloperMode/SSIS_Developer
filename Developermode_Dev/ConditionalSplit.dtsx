@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="ConditionalSplit"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{14472BC1-F297-4FFB-9F3D-3251922CFAFA}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{F11759C3-3D42-45B0-B5EB-44E9704BECCA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -108,6 +108,18 @@
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{263BD40B-791F-4FAD-816E-5FDA8467C99A}"
+      DTS:ObjectName="WORKPC\SQLSERVER_2022.Test_DB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=WORKPC\SQLSERVER_2022;Initial Catalog=Test_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ConditionalSplit-{263BD40B-791F-4FAD-816E-5FDA8467C99A}WORKPC\SQLSERVER_2022.Test_DB;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -457,8 +469,8 @@
               <connections>
                 <connection
                   refId="Package\DFT_ConditionalSplit\Source_SampleData.Connections[OleDbConnection]"
-                  connectionManagerID="{45B2E9B3-D620-4A6E-8ADD-5F22F9883E07}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[WORKPC_MSSQLSERVER_2019.Test_DB]"
+                  connectionManagerID="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -609,15 +621,15 @@
         <NodeLayout
           Size="180,42"
           Id="Package\DFT_ConditionalSplit\FFD_CountryGroup_1"
-          TopLeft="96,317" />
+          TopLeft="60,310" />
         <NodeLayout
           Size="180,42"
           Id="Package\DFT_ConditionalSplit\FFD_CountryGroup_2"
-          TopLeft="462,309" />
+          TopLeft="473,318" />
         <NodeLayout
           Size="155,42"
           Id="Package\DFT_ConditionalSplit\Conditional Split"
-          TopLeft="236,164" />
+          TopLeft="294,175" />
         <NodeLayout
           Size="173,42"
           Id="Package\DFT_ConditionalSplit\Source_SampleData"
@@ -628,26 +640,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="67,43"
+              EndConnector="125,54"
               Start="0,0"
-              End="67,35.5">
+              End="125,46.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,17.5" />
+                    End="0,23" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,17.5"
-                    Point2="0,21.5"
-                    Point3="4,21.5" />
+                    Point1="0,23"
+                    Point2="0,27"
+                    Point3="4,27" />
                   <mssgle:LineSegment
-                    End="63,21.5" />
+                    End="121,27" />
                   <mssgle:CubicBezierSegment
-                    Point1="63,21.5"
-                    Point2="67,21.5"
-                    Point3="67,25.5" />
+                    Point1="121,27"
+                    Point2="125,27"
+                    Point3="125,31" />
                   <mssgle:LineSegment
-                    End="67,35.5" />
+                    End="125,46.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -658,73 +670,73 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_ConditionalSplit.Paths[CountyGroup_1]"
-          TopLeft="289,206">
+          TopLeft="347,217">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-103,111"
+              EndConnector="-197,93"
               Start="0,0"
-              End="-103,103.5">
+              End="-197,85.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,41.0804597701149" />
+                    End="0,33.7701149425287" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,41.0804597701149"
-                    Point2="0,45.0804597701149"
-                    Point3="-4,45.0804597701149" />
+                    Point1="0,33.7701149425287"
+                    Point2="0,37.7701149425287"
+                    Point3="-4,37.7701149425287" />
                   <mssgle:LineSegment
-                    End="-99,45.0804597701149" />
+                    End="-193,37.7701149425287" />
                   <mssgle:CubicBezierSegment
-                    Point1="-99,45.0804597701149"
-                    Point2="-103,45.0804597701149"
-                    Point3="-103,49.0804597701149" />
+                    Point1="-193,37.7701149425287"
+                    Point2="-197,37.7701149425287"
+                    Point3="-197,41.7701149425287" />
                   <mssgle:LineSegment
-                    End="-103,103.5" />
+                    End="-197,85.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-86.2580859375,50.0804597701149,69.516171875,11.4140625"
+              BoundingBox="-133.2580859375,42.7701149425287,69.516171875,11.4140625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_ConditionalSplit.Paths[CountryGroup_2]"
-          TopLeft="338,206">
+          TopLeft="396,217">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="214,103"
+              EndConnector="167,101"
               Start="0,0"
-              End="214,95.5">
+              End="167,93.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.8314176245211" />
+                    End="0,37.0191570881226" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.8314176245211"
-                    Point2="0,41.8314176245211"
-                    Point3="4,41.8314176245211" />
+                    Point1="0,37.0191570881226"
+                    Point2="0,41.0191570881226"
+                    Point3="4,41.0191570881226" />
                   <mssgle:LineSegment
-                    End="210,41.8314176245211" />
+                    End="163,41.0191570881226" />
                   <mssgle:CubicBezierSegment
-                    Point1="210,41.8314176245211"
-                    Point2="214,41.8314176245211"
-                    Point3="214,45.8314176245211" />
+                    Point1="163,41.0191570881226"
+                    Point2="167,41.0191570881226"
+                    Point3="167,45.0191570881226" />
                   <mssgle:LineSegment
-                    End="214,95.5" />
+                    End="167,93.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="70.2563671875,46.8314176245211,73.487265625,11.43359375"
+              BoundingBox="46.7563671875,46.0191570881226,73.487265625,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

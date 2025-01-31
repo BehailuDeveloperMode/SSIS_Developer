@@ -11,8 +11,8 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="DataIncrementalLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="45"
-  DTS:VersionGUID="{EED29587-606C-494E-8830-E78641B2F917}">
+  DTS:VersionBuild="49"
+  DTS:VersionGUID="{8F10ED21-73C1-4302-9435-F64B1423A34D}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -80,6 +80,18 @@
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{05D9F229-50EF-407A-A229-8CF41A41EB0B}"
+      DTS:ObjectName="WORKPC\SQLSERVER_2022.Test_DB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=WORKPC\SQLSERVER_2022;Initial Catalog=Test_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-DataIncrementalLoad-{05D9F229-50EF-407A-A229-8CF41A41EB0B}WORKPC\SQLSERVER_2022.Test_DB;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
@@ -106,7 +118,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{78841612-5435-4F7E-8AF0-D2D5C717F7D9}"
+          SQLTask:Connection="{05D9F229-50EF-407A-A229-8CF41A41EB0B}"
           SQLTask:SqlStatementSource="--==============================&#x9; &#xA;&#x9; IF NOT EXISTS&#xA;&#x9;&#x9; (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Audit_log]') AND type IN (N'U'))&#xA;&#x9;&#x9;&#x9;CREATE TABLE Audit_log&#xA;&#x9;&#x9;&#x9;&#x9; (&#xA;&#x9;&#x9;&#x9;&#x9; Id INT IDENTITY,&#xA;&#x9;&#x9;&#x9;&#x9; PakageName VARCHAR(200),&#xA;&#x9;&#x9;&#x9;&#x9; TableName VARCHAR(200),&#xA;&#x9;&#x9;&#x9;&#x9; RecordsInserted INT,&#xA;&#x9;&#x9;&#x9;&#x9; RecordsUpdated INT,&#xA;&#x9;&#x9;&#x9;&#x9; Dated DATETIME&#xA;&#x9;&#x9;&#x9;&#x9; ) ON [PRIMARY]&#xA;GO&#xA;--=============================&#xA;&#x9;&#x9;IF NOT EXISTS&#xA;&#x9;&#x9;   (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[Emails]') AND TYPE IN(N'U'))&#xA;&#x9;&#x9;&#x9;CREATE TABLE Emails&#xA;&#x9;&#x9;&#x9;&#x9; (&#xA;&#x9;&#x9;&#x9;&#x9; Id INT NULL,&#xA;&#x9;&#x9;&#x9;&#x9; First_Name VARCHAR(50) NULL,&#xA;&#x9;&#x9;&#x9;&#x9; Last_Name VARCHAR(50) NULL,&#xA;&#x9;&#x9;&#x9;&#x9; Email VARCHAR(50) NULL,&#xA;&#x9;&#x9;&#x9;&#x9; Gender CHAR(1) NULL&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9; ) ON [PRIMARY]&#xA;GO&#xA;--=============================&#xA;&#x9;&#x9;IF NOT EXISTS&#xA;&#x9;&#x9;   (SELECT * FROM sys.objects WHERE object_id = OBJECT_ID(N'[dbo].[ZZ_Emaile_Updated]') AND TYPE IN(N'U'))&#xA;&#x9;&#x9;&#x9;CREATE TABLE ZZ_Emaile_Updated&#xA;&#x9;&#x9;&#x9;&#x9; (&#xA;&#x9;&#x9;&#x9;&#x9; Id INT NULL,&#xA;&#x9;&#x9;&#x9;&#x9; First_Name VARCHAR(50) NULL,&#xA;&#x9;&#x9;&#x9;&#x9; Last_Name VARCHAR(50) NULL,&#xA;&#x9;&#x9;&#x9;&#x9; Email VARCHAR(50) NULL,&#xA;&#x9;&#x9;&#x9;&#x9; Gender CHAR(1) NULL&#x9;&#x9;&#x9;&#xA;&#x9;&#x9;&#x9;&#x9; ) ON [PRIMARY]&#xA;GO&#xA;--=============================" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -157,14 +169,14 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Dest_Email"
-                      lineageId="Package\DFT_EmailLoad\Lookup.Outputs[Lookup Match Output].Columns[Dest_Email]" />
+                      lineageId="Package\DFT_EmailLoad\92:invalid" />
                     <inputColumn
                       refId="Package\DFT_EmailLoad\Conditional Split.Inputs[Conditional Split Input].Columns[Dest_LastName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Dest_LastName"
-                      lineageId="Package\DFT_EmailLoad\Lookup.Outputs[Lookup Match Output].Columns[Dest_LastName]" />
+                      lineageId="Package\DFT_EmailLoad\94:invalid" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -184,7 +196,7 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">#{Package\DFT_EmailLoad\FFS_Emails.Outputs[Flat File Source Output].Columns[last_name]} != #{Package\DFT_EmailLoad\Lookup.Outputs[Lookup Match Output].Columns[Dest_LastName]} || #{Package\DFT_EmailLoad\FFS_Emails.Outputs[Flat File Source Output].Columns[email]} != #{Package\DFT_EmailLoad\Lookup.Outputs[Lookup Match Output].Columns[Dest_Email]}</property>
+                      name="Expression">#{Package\DFT_EmailLoad\FFS_Emails.Outputs[Flat File Source Output].Columns[last_name]} != #{Package\DFT_EmailLoad\94:invalid} || #{Package\DFT_EmailLoad\FFS_Emails.Outputs[Flat File Source Output].Columns[email]} != #{Package\DFT_EmailLoad\92:invalid}</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -295,8 +307,8 @@
               <connections>
                 <connection
                   refId="Package\DFT_EmailLoad\Emails.Connections[OleDbConnection]"
-                  connectionManagerID="{78841612-5435-4F7E-8AF0-D2D5C717F7D9}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[WORKPC_MSSQL_DEVELOPER.SSIS]"
+                  connectionManagerID="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -375,7 +387,7 @@
                       refId="Package\DFT_EmailLoad\Emails.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="1"
                       name="Gender" />
                   </externalMetadataColumns>
                 </input>
@@ -620,13 +632,13 @@
                   description="Specifies the SQL statement that generates the lookup table."
                   expressionType="Notify"
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">SELECT Id, Email AS Dest_Email, Last_Name AS Dest_LastName  FROM [dbo].[Emails]</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from [dbo].[Emails]</property>
                 <property
                   dataType="System.String"
                   description="Specifies a SQL statement that uses parameters to generate the lookup table."
                   expressionType="Notify"
                   name="SqlCommandParam"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (SELECT Id, Email AS Dest_Email, Last_Name AS Dest_LastName  FROM [dbo].[Emails]) [refTable]
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">select * from (select * from [dbo].[Emails]) [refTable]
 where [refTable].[Id] = ?</property>
                 <property
                   dataType="System.Int32"
@@ -658,7 +670,7 @@ where [refTable].[Id] = ?</property>
                 <property
                   dataType="System.String"
                   description="Indicates whether to reference metadata in an XML format."
-                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="Dest_Email" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Dest_LastName" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
+                  name="ReferenceMetadataXml">&lt;referenceMetadata&gt;&lt;referenceColumns&gt;&lt;referenceColumn name="Id" dataType="DT_I4" length="0" precision="0" scale="0" codePage="0"/&gt;&lt;referenceColumn name="First_Name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Last_Name" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Email" dataType="DT_STR" length="50" precision="0" scale="0" codePage="1252"/&gt;&lt;referenceColumn name="Gender" dataType="DT_STR" length="1" precision="0" scale="0" codePage="1252"/&gt;&lt;/referenceColumns&gt;&lt;/referenceMetadata&gt;</property>
                 <property
                   containsID="true"
                   dataType="System.String"
@@ -676,8 +688,8 @@ where [refTable].[Id] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT_EmailLoad\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="{78841612-5435-4F7E-8AF0-D2D5C717F7D9}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[WORKPC_MSSQL_DEVELOPER.SSIS]"
+                  connectionManagerID="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -715,35 +727,17 @@ where [refTable].[Id] = ?</property>
                   synchronousInputId="Package\DFT_EmailLoad\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\DFT_EmailLoad\Lookup.Outputs[Lookup Match Output].Columns[Dest_Email]"
-                      codePage="1252"
-                      dataType="str"
+                      refId="Package\DFT_EmailLoad\Lookup.Outputs[Lookup Match Output].Columns[Id]"
+                      dataType="i4"
                       errorOrTruncationOperation="Copy Column"
-                      length="50"
-                      lineageId="Package\DFT_EmailLoad\Lookup.Outputs[Lookup Match Output].Columns[Dest_Email]"
-                      name="Dest_Email"
+                      lineageId="Package\DFT_EmailLoad\Lookup.Outputs[Lookup Match Output].Columns[Id]"
+                      name="Id"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">Dest_Email</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\DFT_EmailLoad\Lookup.Outputs[Lookup Match Output].Columns[Dest_LastName]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Copy Column"
-                      length="50"
-                      lineageId="Package\DFT_EmailLoad\Lookup.Outputs[Lookup Match Output].Columns[Dest_LastName]"
-                      name="Dest_LastName"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.String"
-                          description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">Dest_LastName</property>
+                          name="CopyFromReferenceColumn">Id</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -869,8 +863,8 @@ where [refTable].[Id] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT_EmailLoad\ZZ_Email_Update.Connections[OleDbConnection]"
-                  connectionManagerID="{78841612-5435-4F7E-8AF0-D2D5C717F7D9}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[WORKPC_MSSQL_DEVELOPER.SSIS]"
+                  connectionManagerID="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -949,7 +943,7 @@ where [refTable].[Id] = ?</property>
                       refId="Package\DFT_EmailLoad\ZZ_Email_Update.Inputs[OLE DB Destination Input].ExternalColumns[Gender]"
                       codePage="1252"
                       dataType="str"
-                      length="50"
+                      length="1"
                       name="Gender" />
                   </externalMetadataColumns>
                 </input>
@@ -1023,7 +1017,7 @@ where [refTable].[Id] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{78841612-5435-4F7E-8AF0-D2D5C717F7D9}"
+          SQLTask:Connection="{05D9F229-50EF-407A-A229-8CF41A41EB0B}"
           SQLTask:SqlStatementSource="DECLARE @Updated INT&#xA;UPDATE a&#xA;SET a.First_Name = b.First_Name,&#xA;    a.Last_Name = b.Last_Name,&#xA;&#x9;a.Email = b.Email,&#xA;&#x9;a.Gender = b.Gender&#xA;FROM [dbo].[Emails]a&#xA;INNER JOIN [dbo].[ZZ_Emaile_Updated] AS b&#xA;ON a.Id = b.Id&#xA;SET @Updated = @@ROWCOUNT&#xA;INSERT INTO [dbo].[Audit_log]&#xA;SELECT ? ,'dbo.Emails', ? , @Updated ,GETDATE()" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -1166,7 +1160,7 @@ where [refTable].[Id] = ?</property>
         <NodeLayout
           Size="162,42"
           Id="Package\DFT_EmailLoad\ZZ_Email_Update"
-          TopLeft="699,381" />
+          TopLeft="717,402" />
         <NodeLayout
           Size="132,42"
           Id="Package\DFT_EmailLoad\FFS_Emails"
@@ -1174,77 +1168,77 @@ where [refTable].[Id] = ?</property>
         <NodeLayout
           Size="113,42"
           Id="Package\DFT_EmailLoad\Lookup"
-          TopLeft="328,161" />
+          TopLeft="339,161" />
         <NodeLayout
           Size="155,42"
           Id="Package\DFT_EmailLoad\Conditional Split"
-          TopLeft="571,268" />
+          TopLeft="636,265" />
         <NodeLayout
           Size="109,42"
           Id="Package\DFT_EmailLoad\Emails"
-          TopLeft="230,337" />
+          TopLeft="211,376" />
         <EdgeLayout
           Id="Package\DFT_EmailLoad.Paths[Updated Record]"
-          TopLeft="648.5,310">
+          TopLeft="713.5,307">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="131.5,71"
+              EndConnector="84.5,95"
               Start="0,0"
-              End="131.5,63.5">
+              End="84.5,87.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5" />
+                    End="0,43.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.5"
-                    Point2="0,35.5"
-                    Point3="4,35.5" />
+                    Point1="0,43.5"
+                    Point2="0,47.5"
+                    Point3="4,47.5" />
                   <mssgle:LineSegment
-                    End="127.5,35.5" />
+                    End="80.5,47.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="127.5,35.5"
-                    Point2="131.5,35.5"
-                    Point3="131.5,39.5" />
+                    Point1="80.5,47.5"
+                    Point2="84.5,47.5"
+                    Point3="84.5,51.5" />
                   <mssgle:LineSegment
-                    End="131.5,63.5" />
+                    End="84.5,87.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="30.02306640625,40.5,71.4538671875,11.609375"
+              BoundingBox="6.52306640625,52.5,71.4538671875,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_EmailLoad.Paths[Row Count Output 1]"
-          TopLeft="192,294">
+          TopLeft="127,315">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="38,64"
+              EndConnector="138.5,61"
               Start="0,0"
-              End="30.5,64">
+              End="138.5,53.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="15,0" />
+                    End="0,26.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="15,0"
-                    Point2="19,0"
-                    Point3="19,4" />
+                    Point1="0,26.5"
+                    Point2="0,30.5"
+                    Point3="4,30.5" />
                   <mssgle:LineSegment
-                    End="19,60" />
+                    End="134.5,30.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="19,60"
-                    Point2="19,64"
-                    Point3="23,64" />
+                    Point1="134.5,30.5"
+                    Point2="138.5,30.5"
+                    Point3="138.5,34.5" />
                   <mssgle:LineSegment
-                    End="30.5,64" />
+                    End="138.5,53.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1255,13 +1249,13 @@ where [refTable].[Id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_EmailLoad.Paths[Lookup No Match Output]"
-          TopLeft="367,203">
+          TopLeft="378,203">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-240,70"
+              EndConnector="-251,70"
               Start="0,0"
-              End="-240,62.5">
+              End="-251,62.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1272,56 +1266,56 @@ where [refTable].[Id] = ?</property>
                     Point2="0,28.586387434555"
                     Point3="-4,28.586387434555" />
                   <mssgle:LineSegment
-                    End="-236,28.586387434555" />
+                    End="-247,28.586387434555" />
                   <mssgle:CubicBezierSegment
-                    Point1="-236,28.586387434555"
-                    Point2="-240,28.586387434555"
-                    Point3="-240,32.586387434555" />
+                    Point1="-247,28.586387434555"
+                    Point2="-251,28.586387434555"
+                    Point3="-251,32.586387434555" />
                   <mssgle:LineSegment
-                    End="-240,62.5" />
+                    End="-251,62.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-175.80638671875,33.586387434555,111.6127734375,11.609375"
+              BoundingBox="-181.30638671875,33.586387434555,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_EmailLoad.Paths[Lookup Match Output]"
-          TopLeft="402,203">
+          TopLeft="413,203">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="246.5,65"
+              EndConnector="300.5,62"
               Start="0,0"
-              End="246.5,57.5">
+              End="300.5,54.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,22.544502617801" />
+                    End="0,21.3193717277487" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,22.544502617801"
-                    Point2="0,26.544502617801"
-                    Point3="4,26.544502617801" />
+                    Point1="0,21.3193717277487"
+                    Point2="0,25.3193717277487"
+                    Point3="4,25.3193717277487" />
                   <mssgle:LineSegment
-                    End="242.5,26.544502617801" />
+                    End="296.5,25.3193717277487" />
                   <mssgle:CubicBezierSegment
-                    Point1="242.5,26.544502617801"
-                    Point2="246.5,26.544502617801"
-                    Point3="246.5,30.544502617801" />
+                    Point1="296.5,25.3193717277487"
+                    Point2="300.5,25.3193717277487"
+                    Point3="300.5,29.3193717277487" />
                   <mssgle:LineSegment
-                    End="246.5,57.5" />
+                    End="300.5,54.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="75.05861328125,31.544502617801,96.3827734375,11.609375"
+              BoundingBox="93.1899609375,30.3193717277487,114.120078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1331,9 +1325,9 @@ where [refTable].[Id] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="130.5,48"
+              EndConnector="141.5,48"
               Start="0,0"
-              End="130.5,40.5">
+              End="141.5,40.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -1344,13 +1338,13 @@ where [refTable].[Id] = ?</property>
                     Point2="0,24"
                     Point3="4,24" />
                   <mssgle:LineSegment
-                    End="126.5,24" />
+                    End="137.5,24" />
                   <mssgle:CubicBezierSegment
-                    Point1="126.5,24"
-                    Point2="130.5,24"
-                    Point3="130.5,28" />
+                    Point1="137.5,24"
+                    Point2="141.5,24"
+                    Point3="141.5,28" />
                   <mssgle:LineSegment
-                    End="130.5,40.5" />
+                    End="141.5,40.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1381,17 +1375,17 @@ where [refTable].[Id] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
         <Value
-          type="q3:string"></Value>
+          type="q3:string">[dbo].[Emails]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>

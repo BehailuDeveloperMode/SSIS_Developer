@@ -11,10 +11,24 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="MergeJoin"
   DTS:PackageType="5"
-  DTS:VersionBuild="27"
-  DTS:VersionGUID="{D9929364-AA5A-4AA8-9632-7E139647629C}">
+  DTS:VersionBuild="28"
+  DTS:VersionGUID="{609B4BA3-EB66-44C2-9D11-FB6E54D712CA}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{0DDE9355-99C7-4EC5-85A8-90E6F15D70B0}"
+      DTS:ObjectName="WORKPC\SQLSERVER_2022.Test_DB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=WORKPC\SQLSERVER_2022;Initial Catalog=Test_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-MergeJoin-{0DDE9355-99C7-4EC5-85A8-90E6F15D70B0}WORKPC\SQLSERVER_2022.Test_DB;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
@@ -269,8 +283,8 @@
               <connections>
                 <connection
                   refId="Package\DFT_MergeJoin_Countrycode\Source_Continent.Connections[OleDbConnection]"
-                  connectionManagerID="{45B2E9B3-D620-4A6E-8ADD-5F22F9883E07}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[WORKPC_MSSQLSERVER_2019.Test_DB]"
+                  connectionManagerID="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -425,8 +439,8 @@
               <connections>
                 <connection
                   refId="Package\DFT_MergeJoin_Countrycode\Source_SampleData.Connections[OleDbConnection]"
-                  connectionManagerID="{45B2E9B3-D620-4A6E-8ADD-5F22F9883E07}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[WORKPC_MSSQLSERVER_2019.Test_DB]"
+                  connectionManagerID="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -575,7 +589,7 @@
     design-time-name="Package\DFT_MergeJoin_Countrycode">
     <LayoutInfo>
       <GraphLayout
-        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
           Size="162,42"
           Id="Package\DFT_MergeJoin_Countrycode\Source_Continent"
@@ -583,7 +597,7 @@
         <NodeLayout
           Size="120,42"
           Id="Package\DFT_MergeJoin_Countrycode\Multicast"
-          TopLeft="472,441" />
+          TopLeft="659,390" />
         <NodeLayout
           Size="173,42"
           Id="Package\DFT_MergeJoin_Countrycode\Source_SampleData"
@@ -591,33 +605,33 @@
         <NodeLayout
           Size="130,42"
           Id="Package\DFT_MergeJoin_Countrycode\Merge Join"
-          TopLeft="258,290" />
+          TopLeft="178,304" />
         <EdgeLayout
           Id="Package\DFT_MergeJoin_Countrycode.Paths[OLE DB Source Output1]"
           TopLeft="438.5,127">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-95.1666666666667,163"
+              EndConnector="-175.166666666667,177"
               Start="0,0"
-              End="-95.1666666666667,155.5">
+              End="-175.166666666667,169.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,92.6109422492401" />
+                    End="0,100.908814589666" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,92.6109422492401"
-                    Point2="0,96.6109422492401"
-                    Point3="-4,96.6109422492401" />
+                    Point1="0,100.908814589666"
+                    Point2="0,104.908814589666"
+                    Point3="-4,104.908814589666" />
                   <mssgle:LineSegment
-                    End="-91.1666666666667,96.6109422492401" />
+                    End="-171.166666666667,104.908814589666" />
                   <mssgle:CubicBezierSegment
-                    Point1="-91.1666666666667,96.6109422492401"
-                    Point2="-95.1666666666667,96.6109422492401"
-                    Point3="-95.1666666666667,100.61094224924" />
+                    Point1="-171.166666666667,104.908814589666"
+                    Point2="-175.166666666667,104.908814589666"
+                    Point3="-175.166666666667,108.908814589666" />
                   <mssgle:LineSegment
-                    End="-95.1666666666667,155.5" />
+                    End="-175.166666666667,169.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -632,26 +646,26 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="105.166666666667,160.5"
+              EndConnector="25.1666666666667,174.5"
               Start="0,0"
-              End="105.166666666667,153">
+              End="25.1666666666667,167">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,91.129179331307" />
+                    End="0,99.4270516717325" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,91.129179331307"
-                    Point2="0,95.129179331307"
-                    Point3="4,95.129179331307" />
+                    Point1="0,99.4270516717325"
+                    Point2="0,103.427051671733"
+                    Point3="4,103.427051671733" />
                   <mssgle:LineSegment
-                    End="101.166666666667,95.129179331307" />
+                    End="21.1666666666667,103.427051671733" />
                   <mssgle:CubicBezierSegment
-                    Point1="101.166666666667,95.129179331307"
-                    Point2="105.166666666667,95.129179331307"
-                    Point3="105.166666666667,99.129179331307" />
+                    Point1="21.1666666666667,103.427051671733"
+                    Point2="25.1666666666667,103.427051671733"
+                    Point3="25.1666666666667,107.427051671733" />
                   <mssgle:LineSegment
-                    End="105.166666666667,153" />
+                    End="25.1666666666667,167" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -662,36 +676,38 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_MergeJoin_Countrycode.Paths[Merge Join Output]"
-          TopLeft="323,332">
+          TopLeft="243,346">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="209,109"
+              EndConnector="476,44"
               Start="0,0"
-              End="209,101.5">
+              End="476,36.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,50.5" />
+                    End="0,18" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,50.5"
-                    Point2="0,54.5"
-                    Point3="4,54.5" />
+                    Point1="0,18"
+                    Point2="0,22"
+                    Point3="4,22" />
                   <mssgle:LineSegment
-                    End="205,54.5" />
+                    End="472,22" />
                   <mssgle:CubicBezierSegment
-                    Point1="205,54.5"
-                    Point2="209,54.5"
-                    Point3="209,58.5" />
+                    Point1="472,22"
+                    Point2="476,22"
+                    Point3="476,26" />
                   <mssgle:LineSegment
-                    End="209,101.5" />
+                    End="476,36.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="230,27,16,16"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
       </GraphLayout>

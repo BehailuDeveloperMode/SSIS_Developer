@@ -11,10 +11,24 @@
   DTS:LocaleID="1033"
   DTS:ObjectName="Lookup"
   DTS:PackageType="5"
-  DTS:VersionBuild="19"
-  DTS:VersionGUID="{2E8FBBD2-135C-44F9-881B-6329D1388ACC}">
+  DTS:VersionBuild="21"
+  DTS:VersionGUID="{3DDAB332-295A-41F6-BB0B-56174D19CF13}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{9D1C9E74-1094-49A3-B5EE-D49C7294D762}"
+      DTS:ObjectName="WORKPC\SQLSERVER_2022.Test_DB">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=WORKPC\SQLSERVER_2022;Initial Catalog=Test_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-Lookup-{9D1C9E74-1094-49A3-B5EE-D49C7294D762}WORKPC\SQLSERVER_2022.Test_DB;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
@@ -67,7 +81,7 @@ where [refTable].[City] = ?</property>
                   dataType="System.Int32"
                   description="Specifies how the Lookup transformation handles rows without matching entries in the reference data set."
                   name="NoMatchBehavior"
-                  typeConverter="LookupNoMatchBehavior">0</property>
+                  typeConverter="LookupNoMatchBehavior">1</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the percentage of the cache that is allocated for rows with no matching entries in the reference dataset."
@@ -101,8 +115,8 @@ where [refTable].[City] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT_LookupCountry\Lookup_SampleData.Connections[OleDbConnection]"
-                  connectionManagerID="{45B2E9B3-D620-4A6E-8ADD-5F22F9883E07}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[WORKPC_MSSQLSERVER_2019.Test_DB]"
+                  connectionManagerID="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -137,7 +151,6 @@ where [refTable].[City] = ?</property>
                 <output
                   refId="Package\DFT_LookupCountry\Lookup_SampleData.Outputs[Lookup Match Output]"
                   errorOrTruncationOperation="Lookup"
-                  errorRowDisposition="IgnoreFailure"
                   exclusionGroup="1"
                   name="Lookup Match Output"
                   synchronousInputId="Package\DFT_LookupCountry\Lookup_SampleData.Inputs[Lookup Input]">
@@ -268,8 +281,8 @@ where [refTable].[City] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT_LookupCountry\Source_Continent.Connections[OleDbConnection]"
-                  connectionManagerID="{45B2E9B3-D620-4A6E-8ADD-5F22F9883E07}:external"
-                  connectionManagerRefId="Project.ConnectionManagers[WORKPC_MSSQLSERVER_2019.Test_DB]"
+                  connectionManagerID="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+                  connectionManagerRefId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -415,7 +428,7 @@ where [refTable].[City] = ?</property>
         <NodeLayout
           Size="120,42"
           Id="Package\DFT_LookupCountry\Multicast"
-          TopLeft="577,360" />
+          TopLeft="577,412" />
         <NodeLayout
           Size="162,42"
           Id="Package\DFT_LookupCountry\Source_Continent"
@@ -464,33 +477,33 @@ where [refTable].[City] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="254.5,73"
+              EndConnector="254.5,125"
               Start="0,0"
-              End="254.5,65.5">
+              End="254.5,117.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,32.5" />
+                    End="0,58.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,32.5"
-                    Point2="0,36.5"
-                    Point3="4,36.5" />
+                    Point1="0,58.5"
+                    Point2="0,62.5"
+                    Point3="4,62.5" />
                   <mssgle:LineSegment
-                    End="250.5,36.5" />
+                    End="250.5,62.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="250.5,36.5"
-                    Point2="254.5,36.5"
-                    Point3="254.5,40.5" />
+                    Point1="250.5,62.5"
+                    Point2="254.5,62.5"
+                    Point3="254.5,66.5" />
                   <mssgle:LineSegment
-                    End="254.5,65.5" />
+                    End="254.5,117.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="79.05861328125,41.5,96.3827734375,11.609375"
+              BoundingBox="70.1899609375,67.5,114.120078125,16"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
