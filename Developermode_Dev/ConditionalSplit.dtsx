@@ -7,12 +7,12 @@
   DTS:CreatorName="WORKPC\Behailu_Tessema"
   DTS:DTSID="{17713FAE-BEF3-4A82-9F72-414AD3779AE1}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="ConditionalSplit"
   DTS:PackageType="5"
-  DTS:VersionBuild="21"
-  DTS:VersionGUID="{F11759C3-3D42-45B0-B5EB-44E9704BECCA}">
+  DTS:VersionBuild="27"
+  DTS:VersionGUID="{D450BD8C-112E-4EDB-9BD0-7E060DBB4AA9}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -31,7 +31,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\SSIS\Source\CountryGroup_1.txt">
+          DTS:ConnectionString="C:\Users\tbeha\Behailu Tessema-(DeveloperMode.dev)\Family Living Expenses - Personal Data - Documents\Personal Data\GitHub\SSIS_Developer\Destination\CountryGroup_1.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -39,7 +39,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ID"
-              DTS:DTSID="{02FD4A19-55BB-4C26-9B59-62080F3DE934}"
+              DTS:DTSID="{8E2F629F-223E-4C46-A248-5079A6930870}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -48,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CountryName"
-              DTS:DTSID="{8665BC78-7665-4C13-96F9-2FD67252CEC6}"
+              DTS:DTSID="{28EE04C8-8E40-4780-A57A-2B614D865CB8}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -57,7 +57,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="City"
-              DTS:DTSID="{32B4F0FB-946D-467F-B687-1C02824110B2}"
+              DTS:DTSID="{62F15818-2955-4175-A18E-5B864D11DA02}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
@@ -78,7 +78,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="1252"
-          DTS:ConnectionString="D:\SSIS\Source\CountryGroup_2.txt">
+          DTS:ConnectionString="C:\Users\tbeha\Behailu Tessema-(DeveloperMode.dev)\Family Living Expenses - Personal Data - Documents\Personal Data\GitHub\SSIS_Developer\Destination\CountryGroup_2.txt">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -86,7 +86,7 @@
               DTS:DataType="3"
               DTS:TextQualified="True"
               DTS:ObjectName="ID"
-              DTS:DTSID="{198E6E31-62A2-4296-B0AC-1CC9A6003D8F}"
+              DTS:DTSID="{A4D1FDDF-431E-4894-B114-3165B8E3EF11}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -95,7 +95,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="CountryName"
-              DTS:DTSID="{2DE28B4B-CCE9-4302-A63B-088AD0D859FA}"
+              DTS:DTSID="{A5D22FBB-9E98-43F8-AEF4-33C6C94A7D5A}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -104,22 +104,10 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="City"
-              DTS:DTSID="{C33383F6-CA57-4CA7-A528-6B9ACCA6CC9C}"
+              DTS:DTSID="{8204BA24-70AF-4CB3-8727-B135DFA340B7}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{263BD40B-791F-4FAD-816E-5FDA8467C99A}"
-      DTS:ObjectName="WORKPC\SQLSERVER_2022.Test_DB">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=WORKPC\SQLSERVER_2022;Initial Catalog=Test_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-ConditionalSplit-{263BD40B-791F-4FAD-816E-5FDA8467C99A}WORKPC\SQLSERVER_2022.Test_DB;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -469,8 +457,8 @@
               <connections>
                 <connection
                   refId="Package\DFT_ConditionalSplit\Source_SampleData.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
-                  connectionManagerRefId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+                  connectionManagerID="{7C837CD3-C66D-4C73-92B7-723A7CE41C0A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DEVELOPER-PC_SCHOOL]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -609,7 +597,7 @@
         <NodeLayout
           Size="176,42"
           Id="Package\DFT_ConditionalSplit"
-          TopLeft="261.5,141.5" />
+          TopLeft="239.5,105.5" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -629,37 +617,37 @@
         <NodeLayout
           Size="155,42"
           Id="Package\DFT_ConditionalSplit\Conditional Split"
-          TopLeft="294,175" />
+          TopLeft="254,171" />
         <NodeLayout
           Size="173,42"
           Id="Package\DFT_ConditionalSplit\Source_SampleData"
-          TopLeft="160,79" />
+          TopLeft="156,74" />
         <EdgeLayout
           Id="Package\DFT_ConditionalSplit.Paths[OLE DB Source Output]"
-          TopLeft="246.5,121">
+          TopLeft="242.5,116">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="125,54"
+              EndConnector="89,55"
               Start="0,0"
-              End="125,46.5">
+              End="89,47.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23" />
+                    End="0,23.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23"
-                    Point2="0,27"
-                    Point3="4,27" />
+                    Point1="0,23.5"
+                    Point2="0,27.5"
+                    Point3="4,27.5" />
                   <mssgle:LineSegment
-                    End="121,27" />
+                    End="85,27.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="121,27"
-                    Point2="125,27"
-                    Point3="125,31" />
+                    Point1="85,27.5"
+                    Point2="89,27.5"
+                    Point3="89,31.5" />
                   <mssgle:LineSegment
-                    End="125,46.5" />
+                    End="89,47.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -670,73 +658,73 @@
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_ConditionalSplit.Paths[CountyGroup_1]"
-          TopLeft="347,217">
+          TopLeft="307,213">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-197,93"
+              EndConnector="-157,97"
               Start="0,0"
-              End="-197,85.5">
+              End="-157,89.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.7701149425287" />
+                    End="0,35.3946360153257" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33.7701149425287"
-                    Point2="0,37.7701149425287"
-                    Point3="-4,37.7701149425287" />
+                    Point1="0,35.3946360153257"
+                    Point2="0,39.3946360153257"
+                    Point3="-4,39.3946360153257" />
                   <mssgle:LineSegment
-                    End="-193,37.7701149425287" />
+                    End="-153,39.3946360153257" />
                   <mssgle:CubicBezierSegment
-                    Point1="-193,37.7701149425287"
-                    Point2="-197,37.7701149425287"
-                    Point3="-197,41.7701149425287" />
+                    Point1="-153,39.3946360153257"
+                    Point2="-157,39.3946360153257"
+                    Point3="-157,43.3946360153257" />
                   <mssgle:LineSegment
-                    End="-197,85.5" />
+                    End="-157,89.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-133.2580859375,42.7701149425287,69.516171875,11.4140625"
+              BoundingBox="-113.2580859375,44.3946360153257,69.516171875,11.4140625"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_ConditionalSplit.Paths[CountryGroup_2]"
-          TopLeft="396,217">
+          TopLeft="356,213">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="167,101"
+              EndConnector="207,105"
               Start="0,0"
-              End="167,93.5">
+              End="207,97.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,37.0191570881226" />
+                    End="0,38.6436781609195" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,37.0191570881226"
-                    Point2="0,41.0191570881226"
-                    Point3="4,41.0191570881226" />
+                    Point1="0,38.6436781609195"
+                    Point2="0,42.6436781609195"
+                    Point3="4,42.6436781609195" />
                   <mssgle:LineSegment
-                    End="163,41.0191570881226" />
+                    End="203,42.6436781609195" />
                   <mssgle:CubicBezierSegment
-                    Point1="163,41.0191570881226"
-                    Point2="167,41.0191570881226"
-                    Point3="167,45.0191570881226" />
+                    Point1="203,42.6436781609195"
+                    Point2="207,42.6436781609195"
+                    Point3="207,46.6436781609195" />
                   <mssgle:LineSegment
-                    End="167,93.5" />
+                    End="207,97.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="46.7563671875,46.0191570881226,73.487265625,11.43359375"
+              BoundingBox="66.7563671875,47.6436781609195,73.487265625,11.43359375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>

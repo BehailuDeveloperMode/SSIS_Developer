@@ -7,12 +7,12 @@
   DTS:CreatorName="WORKPC\Behailu_Tessema"
   DTS:DTSID="{FB9AC05D-B386-4D5E-AF96-498CB75D5FE2}"
   DTS:ExecutableType="Microsoft.Package"
-  DTS:LastModifiedProductVersion="16.0.5131.0"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="1033"
   DTS:ObjectName="DataIncrementalLoad"
   DTS:PackageType="5"
-  DTS:VersionBuild="49"
-  DTS:VersionGUID="{8F10ED21-73C1-4302-9435-F64B1423A34D}">
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{1141F8CD-0EE6-48FE-BDCC-BBFC02889164}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -78,18 +78,6 @@
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{05D9F229-50EF-407A-A229-8CF41A41EB0B}"
-      DTS:ObjectName="WORKPC\SQLSERVER_2022.Test_DB">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectRetryCount="1"
-          DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=WORKPC\SQLSERVER_2022;Initial Catalog=Test_DB;Provider=SQLNCLI11.1;Integrated Security=SSPI;Application Name=SSIS-DataIncrementalLoad-{05D9F229-50EF-407A-A229-8CF41A41EB0B}WORKPC\SQLSERVER_2022.Test_DB;Auto Translate=False;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -169,14 +157,14 @@
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Dest_Email"
-                      lineageId="Package\DFT_EmailLoad\92:invalid" />
+                      lineageId="Package\DFT_EmailLoad\352:invalid" />
                     <inputColumn
                       refId="Package\DFT_EmailLoad\Conditional Split.Inputs[Conditional Split Input].Columns[Dest_LastName]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="50"
                       cachedName="Dest_LastName"
-                      lineageId="Package\DFT_EmailLoad\94:invalid" />
+                      lineageId="Package\DFT_EmailLoad\353:invalid" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -196,7 +184,7 @@
                       containsID="true"
                       dataType="System.String"
                       description="Specifies the expression. This expression version uses lineage identifiers instead of column names."
-                      name="Expression">#{Package\DFT_EmailLoad\FFS_Emails.Outputs[Flat File Source Output].Columns[last_name]} != #{Package\DFT_EmailLoad\94:invalid} || #{Package\DFT_EmailLoad\FFS_Emails.Outputs[Flat File Source Output].Columns[email]} != #{Package\DFT_EmailLoad\92:invalid}</property>
+                      name="Expression">#{Package\DFT_EmailLoad\FFS_Emails.Outputs[Flat File Source Output].Columns[last_name]} != #{Package\DFT_EmailLoad\353:invalid} || #{Package\DFT_EmailLoad\FFS_Emails.Outputs[Flat File Source Output].Columns[email]} != #{Package\DFT_EmailLoad\352:invalid}</property>
                     <property
                       containsID="true"
                       dataType="System.String"
@@ -307,8 +295,8 @@
               <connections>
                 <connection
                   refId="Package\DFT_EmailLoad\Emails.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
-                  connectionManagerRefId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+                  connectionManagerID="{7C837CD3-C66D-4C73-92B7-723A7CE41C0A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DEVELOPER-PC_SCHOOL]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -688,8 +676,8 @@ where [refTable].[Id] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT_EmailLoad\Lookup.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
-                  connectionManagerRefId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+                  connectionManagerID="{7C837CD3-C66D-4C73-92B7-723A7CE41C0A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DEVELOPER-PC_SCHOOL]"
                   description="Connection manager used to access lookup data."
                   name="OleDbConnection" />
               </connections>
@@ -863,8 +851,8 @@ where [refTable].[Id] = ?</property>
               <connections>
                 <connection
                   refId="Package\DFT_EmailLoad\ZZ_Email_Update.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
-                  connectionManagerRefId="Package.ConnectionManagers[WORKPC\SQLSERVER_2022.Test_DB]"
+                  connectionManagerID="{7C837CD3-C66D-4C73-92B7-723A7CE41C0A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[DEVELOPER-PC_SCHOOL]"
                   description="The OLE DB runtime connection used to access the database."
                   name="OleDbConnection" />
               </connections>
@@ -1154,17 +1142,17 @@ where [refTable].[Id] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="130,42"
-          Id="Package\DFT_EmailLoad\Row Count"
-          TopLeft="62,273" />
-        <NodeLayout
           Size="162,42"
           Id="Package\DFT_EmailLoad\ZZ_Email_Update"
           TopLeft="717,402" />
         <NodeLayout
+          Size="130,42"
+          Id="Package\DFT_EmailLoad\Row Count"
+          TopLeft="96,281" />
+        <NodeLayout
           Size="132,42"
           Id="Package\DFT_EmailLoad\FFS_Emails"
-          TopLeft="188,71" />
+          TopLeft="193,70" />
         <NodeLayout
           Size="113,42"
           Id="Package\DFT_EmailLoad\Lookup"
@@ -1176,7 +1164,7 @@ where [refTable].[Id] = ?</property>
         <NodeLayout
           Size="109,42"
           Id="Package\DFT_EmailLoad\Emails"
-          TopLeft="211,376" />
+          TopLeft="263,390" />
         <EdgeLayout
           Id="Package\DFT_EmailLoad.Paths[Updated Record]"
           TopLeft="713.5,307">
@@ -1215,30 +1203,30 @@ where [refTable].[Id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_EmailLoad.Paths[Row Count Output 1]"
-          TopLeft="127,315">
+          TopLeft="161,323">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="138.5,61"
+              EndConnector="156.5,67"
               Start="0,0"
-              End="138.5,53.5">
+              End="156.5,59.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,26.5" />
+                    End="0,29.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,26.5"
-                    Point2="0,30.5"
-                    Point3="4,30.5" />
+                    Point1="0,29.5"
+                    Point2="0,33.5"
+                    Point3="4,33.5" />
                   <mssgle:LineSegment
-                    End="134.5,30.5" />
+                    End="152.5,33.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="134.5,30.5"
-                    Point2="138.5,30.5"
-                    Point3="138.5,34.5" />
+                    Point1="152.5,33.5"
+                    Point2="156.5,33.5"
+                    Point3="156.5,37.5" />
                   <mssgle:LineSegment
-                    End="138.5,53.5" />
+                    End="156.5,59.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1253,33 +1241,33 @@ where [refTable].[Id] = ?</property>
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-251,70"
+              EndConnector="-217,78"
               Start="0,0"
-              End="-251,62.5">
+              End="-217,70.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.586387434555" />
+                    End="0,27.8534031413613" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.586387434555"
-                    Point2="0,28.586387434555"
-                    Point3="-4,28.586387434555" />
+                    Point1="0,27.8534031413613"
+                    Point2="0,31.8534031413613"
+                    Point3="-4,31.8534031413613" />
                   <mssgle:LineSegment
-                    End="-247,28.586387434555" />
+                    End="-213,31.8534031413613" />
                   <mssgle:CubicBezierSegment
-                    Point1="-247,28.586387434555"
-                    Point2="-251,28.586387434555"
-                    Point3="-251,32.586387434555" />
+                    Point1="-213,31.8534031413613"
+                    Point2="-217,31.8534031413613"
+                    Point3="-217,35.8534031413613" />
                   <mssgle:LineSegment
-                    End="-251,62.5" />
+                    End="-217,70.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-181.30638671875,33.586387434555,111.6127734375,11.609375"
+              BoundingBox="-164.30638671875,36.8534031413613,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1321,30 +1309,30 @@ where [refTable].[Id] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\DFT_EmailLoad.Paths[Flat File Source Output]"
-          TopLeft="254,113">
+          TopLeft="259,112">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="141.5,48"
+              EndConnector="136.5,49"
               Start="0,0"
-              End="141.5,40.5">
+              End="136.5,41.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,20" />
+                    End="0,20.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,20"
-                    Point2="0,24"
-                    Point3="4,24" />
+                    Point1="0,20.5"
+                    Point2="0,24.5"
+                    Point3="4,24.5" />
                   <mssgle:LineSegment
-                    End="137.5,24" />
+                    End="132.5,24.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="137.5,24"
-                    Point2="141.5,24"
-                    Point3="141.5,28" />
+                    Point1="132.5,24.5"
+                    Point2="136.5,24.5"
+                    Point3="136.5,28.5" />
                   <mssgle:LineSegment
-                    End="141.5,40.5" />
+                    End="136.5,41.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
